@@ -1,4 +1,5 @@
 ﻿using Dal.Interfaces;
+using Dal.Tools;
 using DomainModel;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,40 @@ namespace Dal.Implementations.SqlServer
 {
     internal class CustomerRepository : ICustomerRepository
     {
+
+        #region Statements
+        private string InsertStatement
+        {
+            get => "INSERT INTO [dbo].[Customer] (Name) VALUES (@Name)";
+        }
+
+        private string UpdateStatement
+        {
+            get => "UPDATE [dbo].[Customer] SET (Name = @Name) WHERE IdCustomer = @IdCustomer";
+        }
+
+        private string DeleteStatement
+        {
+            get => "DELETE FROM [dbo].[Customer] WHERE IdCustomer = @IdCustomer";
+        }
+
+        private string SelectOneStatement
+        {
+            get => "SELECT IdCustomer, Name FROM [dbo].[Customer] WHERE IdCustomer = @IdCustomer";
+        }
+
+        private string SelectAllStatement
+        {
+            get => "SELECT IdCustomer, Name FROM [dbo].[Customer]";
+        }
+        #endregion
+
+
         public void Add(Customer entity)
         {
-            throw new NotImplementedException();
+            //SqlHelper.ExecuteScalar(this.InsertStatement,
+            //    System.Data.CommandType.Text, 
+            //    new System.Data.SqlClient.SqlParameter { }())
         }
 
         public void Delete(int id)
