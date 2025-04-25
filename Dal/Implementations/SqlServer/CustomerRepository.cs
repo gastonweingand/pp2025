@@ -18,7 +18,11 @@ namespace Dal.Implementations.SqlServer
         #region Statements
         private string InsertStatement
         {
-            get => "INSERT INTO [dbo].[Customer] (Name) VALUES (@Name)";
+            get => "DECLARE @NewID TABLE (IdCustomer uniqueidentifier); " +
+                   "INSERT INTO [dbo].[Customer] (Name) " +
+                   "OUTPUT INSERTED.IdCustomer INTO @NewID " +
+                   "VALUES (@Name);" +
+                   "SELECT IdCustomer FROM @NewID;";
         }
 
         private string UpdateStatement
@@ -45,9 +49,11 @@ namespace Dal.Implementations.SqlServer
 
         public void Add(Customer entity)
         {
-            //SqlHelper.ExecuteScalar(this.InsertStatement,
-            //    System.Data.CommandType.Text, 
-            //    new System.Data.SqlClient.SqlParameter { }())
+            //Para Stored procedures se puede utilizar SELECT SCOPE_IDENTITY()
+            object returnValue = SqlHelper.ExecuteScalar(InsertStatement, CommandType.Text,
+              new SqlParameter[] { new SqlParameter("@Name", entity.Name) });
+
+            entity.IdCustomer = Guid.Parse(returnValue.ToString());
         }
 
         public void Delete(Guid id)

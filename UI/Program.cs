@@ -34,6 +34,14 @@ namespace UI
 
                 Console.WriteLine($"ID: {customerGabriel.IdCustomer}, Name: {customerGabriel.Name}");
 
+                Console.WriteLine("Agregando un CUSTOMER");
+
+                Customer newCustomer = new Customer();
+                newCustomer.Name = "Lionel";
+                servicio.Add(newCustomer);
+
+                if (newCustomer.IdCustomer != Guid.Empty)
+                    Console.WriteLine("Insertamos correctamente");
 
                 try
                 {

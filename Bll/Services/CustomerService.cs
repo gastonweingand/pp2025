@@ -13,7 +13,7 @@ namespace Bll.Services
     {
         public void Add(Customer entity)
         {
-            throw new NotImplementedException();
+            Repository.GetCustomerInstance().Add(entity);
         }
 
         public void Delete(Guid id)
