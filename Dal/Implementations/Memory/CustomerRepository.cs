@@ -17,30 +17,30 @@ namespace Dal.Implementations.Memory
         {
             _list.Add(new Customer()
             {
-                Id = 1,
+                IdCustomer = Guid.NewGuid(),
                 Name = "Test 1"
             });
 
             _list.Add(new Customer()
             {
-                Id = 2,
+                IdCustomer = Guid.NewGuid(),
                 Name = "Test 2"
             });
         }
         public void Add(Customer entity)
         {
-            int id = _list.Count + 1;
-            entity.Id = id;
+            //int id = _list.Count + 1;
+            entity.IdCustomer = Guid.NewGuid();
             _list.Add(entity);
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             Customer entity = null;
 
             foreach (Customer customer in _list)
             {
-                if(customer.Id == id)
+                if(customer.IdCustomer == id)
                 {
                     entity = customer;
                     break;
@@ -63,7 +63,7 @@ namespace Dal.Implementations.Memory
             throw new NotImplementedException();
         }
 
-        public Customer GetById(int id)
+        public Customer GetById(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -74,7 +74,7 @@ namespace Dal.Implementations.Memory
 
             foreach (Customer customer in _list)
             {
-                if (customer.Id == entity.Id)
+                if (customer.IdCustomer == entity.IdCustomer)
                 {
                     current = customer;
                     break;

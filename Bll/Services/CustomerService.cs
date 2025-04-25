@@ -16,7 +16,7 @@ namespace Bll.Services
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -26,9 +26,9 @@ namespace Bll.Services
             return Repository.GetCustomerInstance().GetAll();
         }
 
-        public Customer GetById(int id)
+        public Customer GetById(Guid id)
         {
-            throw new NotImplementedException();
+            return Repository.GetCustomerInstance().GetById(id);
         }
 
         public bool IsActive(Customer customer)

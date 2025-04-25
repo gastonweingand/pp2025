@@ -16,6 +16,25 @@ namespace UI
         {
             try
             {
+
+
+                //IProductRepository productoRepository = Repository.GetProductInstance();
+
+                Console.WriteLine("GET ALL");
+                ICustomerService servicio = new CustomerService();
+
+                foreach (var item in servicio.GetAll())
+                {
+                    Console.WriteLine($"ID: {item.IdCustomer}, Name: {item.Name}");
+                }
+
+                Console.WriteLine("GET BY ID");
+
+                Customer customerGabriel = servicio.GetById(Guid.Parse("385A8787-011F-F011-AF4E-B81EA4D48094"));
+
+                Console.WriteLine($"ID: {customerGabriel.IdCustomer}, Name: {customerGabriel.Name}");
+
+
                 try
                 {
                     User user1 = User.GetInstance();
@@ -31,23 +50,11 @@ namespace UI
 
                     //Console.WriteLine(user1 == user2); //true Por qué???, Puntero es igual
 
-
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
-
-                //IProductRepository productoRepository = Repository.GetProductInstance();
-
-                ICustomerService servicio = new CustomerService();
-
-                foreach (var item in servicio.GetAll())
-                {
-                    Console.WriteLine($"ID: {item.Id}, Name: {item.Name}");
-                }
-
-
 
 
                 /*ICustomerRepository customerRepo = Repository.GetCustomerInstance();

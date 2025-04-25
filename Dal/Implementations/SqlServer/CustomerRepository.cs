@@ -3,9 +3,12 @@ using Dal.Tools;
 using DomainModel;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using Dal.Implementations.SqlServer.Adapters;
 
 namespace Dal.Implementations.SqlServer
 {
@@ -47,14 +50,33 @@ namespace Dal.Implementations.SqlServer
             //    new System.Data.SqlClient.SqlParameter { }())
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }
 
         public IEnumerable<Customer> GetAll()
         {
-            throw new NotImplementedException();
+            List<Customer> listCustomers = new List<Customer>();
+
+            using (SqlDataReader reader = SqlHelper.ExecuteReader(SelectAllStatement,
+                                                    CommandType.Text, 
+                                                    new SqlParameter[] { }))
+            {
+
+                //Mientras tenga un registro para la lectura...avanzo
+                while (reader.Read())
+                {
+                    //Leemos cada tupla de la tabla
+                    object[] data = new object[reader.FieldCount];
+                    reader.GetValues(data);
+                                        
+                    Customer customer = CustomerAdapter.Current.Get(data);
+                    listCustomers.Add(customer);
+                }
+            }
+
+            return listCustomers;
         }
 
         public IEnumerable<Customer> GetByCreationDate(DateTime date)
@@ -62,9 +84,28 @@ namespace Dal.Implementations.SqlServer
             throw new NotImplementedException();
         }
 
-        public Customer GetById(int id)
+        public Customer GetById(Guid id)
         {
-            throw new NotImplementedException();
+            Customer customer = default;
+
+            using (SqlDataReader reader = SqlHelper.ExecuteReader(SelectOneStatement,
+                                                 CommandType.Text,
+                                                 new SqlParameter[] { 
+                                                     new SqlParameter("@IdCustomer", id) }))
+            {
+
+                //Hacemos la lectura de un solo registro
+                if (reader.Read())
+                {
+                    //Leemos cada tupla de la tabla
+                    object[] data = new object[reader.FieldCount];
+                    reader.GetValues(data);
+
+                    customer = CustomerAdapter.Current.Get(data);
+                }
+            }
+
+            return customer;
         }
 
         public void Update(Customer entity)

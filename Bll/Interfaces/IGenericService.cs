@@ -12,10 +12,10 @@ namespace Bll.Interfaces
 
         void Update(T entity);
 
-        void Delete(int id);
+        void Delete(Guid id);
 
         IEnumerable<T> GetAll();
 
-        T GetById(int id);
+        T GetById(Guid id);
     }
 }

@@ -15,7 +15,7 @@ namespace Dal.Implementations.Memory
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -25,7 +25,7 @@ namespace Dal.Implementations.Memory
             throw new NotImplementedException();
         }
 
-        public Product GetById(int id)
+        public Product GetById(Guid id)
         {
             throw new NotImplementedException();
         }
