@@ -45,3 +45,16 @@
 /UI/bin/Debug/Dal.pdb
 /UI/bin/Debug/UI.exe
 /UI/bin/Debug/UI.pdb
+/Bll/bin/Release
+/Bll/obj/Release
+/Dal/bin/Release
+/Dal/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/Dal/obj/Release
+/Services/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/Services/obj/Debug/Services.csproj.AssemblyReference.cache
+/Services/obj/Debug/Services.csproj.CoreCompileInputs.cache
+/Services/obj/Release
+/UI/bin/Release
+/UI/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/UI/obj/Debug/UI.csproj.FileListAbsolute.txt
+/UI/obj/Release

@@ -1,0 +1,6 @@
+D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\DomainModel\bin\Release\DomainModel.dll
+D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\DomainModel\bin\Release\DomainModel.pdb
+D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\DomainModel\obj\Release\DomainModel.csproj.AssemblyReference.cache
+D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\DomainModel\obj\Release\DomainModel.csproj.CoreCompileInputs.cache
+D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\DomainModel\obj\Release\DomainModel.dll
+D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\DomainModel\obj\Release\DomainModel.pdb

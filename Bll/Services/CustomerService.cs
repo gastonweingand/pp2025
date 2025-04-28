@@ -1,5 +1,6 @@
 ﻿using Bll.Interfaces;
 using Dal.Factory;
+using Dal.Interfaces;
 using DomainModel;
 using System;
 using System.Collections.Generic;
@@ -11,34 +12,46 @@ namespace Bll.Services
 {
     public class CustomerService : ICustomerService
     {
+        ICustomerRepository repository = Repository.GetCustomerInstance();
+
+        public CustomerService()
+        {
+            
+        }
+
         public void Add(Customer entity)
         {
-            Repository.GetCustomerInstance().Add(entity);
+            repository.Add(entity);
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            repository.Delete(id);
         }
 
         public IEnumerable<Customer> GetAll()
         {
-            return Repository.GetCustomerInstance().GetAll();
+            return repository.GetAll();
         }
 
         public Customer GetById(Guid id)
         {
-            return Repository.GetCustomerInstance().GetById(id);
+            return repository.GetById(id);
         }
 
         public bool IsActive(Customer customer)
         {
-            throw new NotImplementedException();
+            //Desde el negocio validar por ejemplo cuándo un cliente es activo o no?
+
+            //Customer getCustomer = repository.GetById(customer.IdCustomer);
+
+            //return getCustomer.Active && getCustomer.FechaAlgo < DateTime
+            return false;
         }
 
         public void Update(Customer entity)
         {
-            throw new NotImplementedException();
+            repository.Update(entity);
         }
     }
 }

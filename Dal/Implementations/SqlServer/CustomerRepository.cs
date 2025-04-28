@@ -27,7 +27,7 @@ namespace Dal.Implementations.SqlServer
 
         private string UpdateStatement
         {
-            get => "UPDATE [dbo].[Customer] SET (Name = @Name) WHERE IdCustomer = @IdCustomer";
+            get => "UPDATE [dbo].[Customer] SET [Name] = @Name WHERE IdCustomer = @IdCustomer";
         }
 
         private string DeleteStatement
@@ -49,15 +49,26 @@ namespace Dal.Implementations.SqlServer
 
         public void Add(Customer entity)
         {
-            //Para Stored procedures se puede utilizar SELECT SCOPE_IDENTITY()
-            object returnValue = SqlHelper.ExecuteScalar(InsertStatement, CommandType.Text,
-              new SqlParameter[] { new SqlParameter("@Name", entity.Name) });
+            try
+            {
+                //Para Stored procedures se puede utilizar SELECT SCOPE_IDENTITY()
+                object returnValue = SqlHelper.ExecuteScalar(InsertStatement, CommandType.Text,
+                  new SqlParameter[] { new SqlParameter("@Name", entity.Name) });
 
-            entity.IdCustomer = Guid.Parse(returnValue.ToString());
+                entity.IdCustomer = Guid.Parse(returnValue.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
 
         public void Delete(Guid id)
         {
+            //No se recomienda ejecutar delete directamente, aplicar update 
+            //sobre algún campo "Habilitado", "Activo" = false
+            //Persistir de alguna manera, fecha de baja, motivo, etc.
             throw new NotImplementedException();
         }
 
@@ -66,7 +77,7 @@ namespace Dal.Implementations.SqlServer
             List<Customer> listCustomers = new List<Customer>();
 
             using (SqlDataReader reader = SqlHelper.ExecuteReader(SelectAllStatement,
-                                                    CommandType.Text, 
+                                                    CommandType.Text,
                                                     new SqlParameter[] { }))
             {
 
@@ -76,7 +87,7 @@ namespace Dal.Implementations.SqlServer
                     //Leemos cada tupla de la tabla
                     object[] data = new object[reader.FieldCount];
                     reader.GetValues(data);
-                                        
+
                     Customer customer = CustomerAdapter.Current.Get(data);
                     listCustomers.Add(customer);
                 }
@@ -96,7 +107,7 @@ namespace Dal.Implementations.SqlServer
 
             using (SqlDataReader reader = SqlHelper.ExecuteReader(SelectOneStatement,
                                                  CommandType.Text,
-                                                 new SqlParameter[] { 
+                                                 new SqlParameter[] {
                                                      new SqlParameter("@IdCustomer", id) }))
             {
 
@@ -116,7 +127,21 @@ namespace Dal.Implementations.SqlServer
 
         public void Update(Customer entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                int filasAfectadas = SqlHelper.ExecuteNonQuery(UpdateStatement, CommandType.Text,
+                                     new SqlParameter[] { 
+                                         new SqlParameter("@Name", entity.Name),
+                                         new SqlParameter("@IdCustomer", entity.IdCustomer) });
+
+                if (filasAfectadas == 0) new Exception("Algún problemita");
+
+                Console.WriteLine($"Filas afectadas: {filasAfectadas.ToString()}");
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

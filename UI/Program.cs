@@ -7,6 +7,7 @@ using Bll.Interfaces;
 using Bll.Services;
 using DomainModel;
 using Services.DomainModel;
+using Services.Facade;
 
 namespace UI
 {
@@ -16,6 +17,11 @@ namespace UI
         {
             try
             {
+
+                string bienvenidos = FacadeIdioma.Traducir("bienvenidos", "en-US");
+
+                Console.WriteLine(bienvenidos);
+
 
 
                 //IProductRepository productoRepository = Repository.GetProductInstance();
@@ -42,6 +48,14 @@ namespace UI
 
                 if (newCustomer.IdCustomer != Guid.Empty)
                     Console.WriteLine("Insertamos correctamente");
+
+
+                Console.WriteLine("UPDATE");
+
+                newCustomer.Name = "Agustín";
+                servicio.Update(newCustomer);
+
+                Console.WriteLine($"Cliente actualizado: {newCustomer.Name}");
 
                 try
                 {
