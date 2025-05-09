@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bll", "Bll\Bll.csproj", "{B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{6DA24A87-97F0-4676-AF1D-286D74946C37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patrones", "Patrones\Patrones.csproj", "{CCE33F41-FB0D-43F1-83D5-E6949DACBDD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6DA24A87-97F0-4676-AF1D-286D74946C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DA24A87-97F0-4676-AF1D-286D74946C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DA24A87-97F0-4676-AF1D-286D74946C37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCE33F41-FB0D-43F1-83D5-E6949DACBDD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCE33F41-FB0D-43F1-83D5-E6949DACBDD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCE33F41-FB0D-43F1-83D5-E6949DACBDD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCE33F41-FB0D-43F1-83D5-E6949DACBDD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

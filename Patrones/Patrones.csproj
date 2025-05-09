@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6DA24A87-97F0-4676-AF1D-286D74946C37}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Services</RootNamespace>
-    <AssemblyName>Services</AssemblyName>
+    <ProjectGuid>{CCE33F41-FB0D-43F1-83D5-E6949DACBDD4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Patrones</RootNamespace>
+    <AssemblyName>Patrones</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,7 +34,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,18 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bll\IdiomaService.cs" />
-    <Compile Include="Bll\LoggerConfiguration.cs" />
-    <Compile Include="Dal\IdiomaRepository.cs" />
-    <Compile Include="Dal\Implementations\FileLogger.cs" />
-    <Compile Include="Dal\Interfaces\ILogger.cs" />
-    <Compile Include="DomainModel\Exceptions\WordNotFoundException.cs" />
-    <Compile Include="DomainModel\Logging\LogEntry.cs" />
-    <Compile Include="DomainModel\Logging\LogLevel.cs" />
-    <Compile Include="DomainModel\User.cs" />
-    <Compile Include="Facade\Extensions\IdiomaExtension.cs" />
-    <Compile Include="Facade\LoggerService.cs" />
+    <Compile Include="Memento\Caretaker.cs" />
+    <Compile Include="Memento\Memento.cs" />
+    <Compile Include="Memento\Personaje.cs" />
+    <Compile Include="Observer\IObservador.cs" />
+    <Compile Include="Observer\Noticia.cs" />
+    <Compile Include="Observer\Revistar.cs" />
+    <Compile Include="Observer\Suscriptor.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

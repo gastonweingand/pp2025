@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Dal.Implementations.SqlServer.Adapters;
+using Services.Facade.Extensions;
 
 namespace Dal.Implementations.SqlServer
 {

@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Bll.Interfaces;
 using Bll.Services;
 using DomainModel;
 using Services.DomainModel;
 using Services.Facade;
+using Services.Facade.Extensions;
 
 namespace UI
 {
@@ -18,11 +22,39 @@ namespace UI
             try
             {
 
-                string bienvenidos = FacadeIdioma.Traducir("bienvenidos", "en-US");
+                LoggerService.GetLogger().Information("Estoy pasando por acá");
+
+                try
+                {
+                    throw new Exception("Una except cualquiera");
+                }
+                catch (Exception ex)
+                {
+                    LoggerService.GetLogger().Error("Esto sería una exc", ex);
+                }
+
+                new CustomerService().IsActive(null);
+                
+
+                //foreach (var item in CultureInfo.GetCultures(CultureTypes.AllCultures).ToList())
+                //{
+                //    if (item.Name.Contains("en"))
+                //    {
+                //        Console.WriteLine($"{item.Name} {item.DisplayName} {item.TwoLetterISOLanguageName}");
+                //    }
+                //}
+
+                Console.WriteLine(Thread.CurrentThread.CurrentCulture.Name);
+
+                string bienvenidos = "bienvenidos".Traducir();
+
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+
+                Console.WriteLine(Thread.CurrentThread.CurrentCulture.DisplayName);
+
+                bienvenidos = "bienvenidos".Traducir();
 
                 Console.WriteLine(bienvenidos);
-
-
 
                 //IProductRepository productoRepository = Repository.GetProductInstance();
 

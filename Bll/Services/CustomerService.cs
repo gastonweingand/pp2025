@@ -2,10 +2,12 @@
 using Dal.Factory;
 using Dal.Interfaces;
 using DomainModel;
+using Services.Facade.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Bll.Services
@@ -46,6 +48,13 @@ namespace Bll.Services
             //Customer getCustomer = repository.GetById(customer.IdCustomer);
 
             //return getCustomer.Active && getCustomer.FechaAlgo < DateTime
+
+            string palabra = "bienvenidos".Traducir();
+            
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+
+            palabra = "bienvenidos".Traducir();
+
             return false;
         }
 

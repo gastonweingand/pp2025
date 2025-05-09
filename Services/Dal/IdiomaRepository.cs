@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Services.DomainModel.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Services.Dal
@@ -38,33 +40,44 @@ namespace Services.Dal
             path = Path.Combine(folderPath, fileName);
         }
 
-        public string Traducir(string word, string cultura)
+        public string Traducir(string word)
         {
-            string localPath = $"{path}.{cultura}";
-
-            using (StreamReader sr = new StreamReader(localPath))
+            try
             {
-                while (!sr.EndOfStream)
-                {
-                    string line = sr.ReadLine();
+                string cultura = Thread.CurrentThread.CurrentCulture.Name;
 
-                    string[] strings = line.Split('=');
-                    string key = strings[0];
-                    string value = strings[1];
-                    
-                    if(key.ToLower() == word.ToLower())
+                string localPath = $"{path}.{cultura}";
+
+                using (StreamReader sr = new StreamReader(localPath))
+                {
+                    while (!sr.EndOfStream)
                     {
-                        //Tengo una palabra encontrada KEY
-                        return value;
+                        string line = sr.ReadLine();
+
+                        string[] strings = line.Split('=');
+                        string key = strings[0];
+                        string value = strings[1];
+
+                        if (key.ToLower() == word.ToLower())
+                        {
+                            return value;
+                        }
                     }
                 }
+                throw new WordNotFoundException();
             }
-
-            throw new Exception("Custom Exception");
-
+            catch (Exception ex)
+            {
+                //Tratamiento de excepciones genéricas.
+                Console.WriteLine(ex.Message);
+                throw;
+            }                  
         }
 
+        public void AgregarDataKey(string key)
+        {
 
+        }
 
     }
 

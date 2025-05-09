@@ -1,4 +1,5 @@
 ﻿using Services.Dal;
+using Services.DomainModel.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,9 +27,21 @@ namespace Services.Bll
 		}
 
 
-        public string Traducir(string word, string cultura)
+        public string Traducir(string word)
 		{
-			return IdiomaRepository.Current.Traducir(word, cultura);
+			try
+			{
+                return IdiomaRepository.Current.Traducir(word);
+            }
+            catch (WordNotFoundException ex) 
+			{
+				//Podría aplicar una nueva política
+				IdiomaRepository.Current.AgregarDataKey(word);
+                //Esto seguramente vaya a una bitácora
+                Console.WriteLine(ex.Message);
+
+				return word;
+			}
 		}
 
     }
