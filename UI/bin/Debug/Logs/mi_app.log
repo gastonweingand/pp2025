@@ -1,10 +1,4 @@
-[2025-05-09 12:37:42.608 -03:00] [Debug] Ahora sí eh!
-[2025-05-09 20:31:02.149 -03:00] [Information] Estoy pasando por acá
-[2025-05-09 20:32:27.208 -03:00] [Information] Estoy pasando por acá
-[2025-05-09 20:32:52.997 -03:00] [Error] Esto sería una exc
-Excepción: System.Exception: Una except cualquiera
-   en UI.Program.Main(String[] args) en D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\UI\Program.cs:línea 29, StackTrace:    en UI.Program.Main(String[] args) en D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\UI\Program.cs:línea 29
-[2025-05-09 20:36:44.200 -03:00] [Information] Estoy pasando por acá
-[2025-05-09 20:36:46.458 -03:00] [Error] Esto sería una exc
-Excepción: System.Exception: Una except cualquiera
+[2025-05-12 20:14:59.145 -03:00] [Information] Estamos probando el logger
+[2025-05-12 20:15:52.635 -03:00] [Error] Mensaje de error
+Excepción: System.Exception: Probando alguna Exception
    en UI.Program.Main(String[] args) en D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\UI\Program.cs:línea 29, StackTrace:    en UI.Program.Main(String[] args) en D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\UI\Program.cs:línea 29

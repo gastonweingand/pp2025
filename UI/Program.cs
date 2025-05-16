@@ -21,17 +21,20 @@ namespace UI
         {
             try
             {
+                LoggerService.GetLogger().Information("Estamos probando el logger");
 
-                LoggerService.GetLogger().Information("Estoy pasando por acá");
 
                 try
                 {
-                    throw new Exception("Una except cualquiera");
+                    throw new Exception("Probando alguna Exception");
                 }
                 catch (Exception ex)
                 {
-                    LoggerService.GetLogger().Error("Esto sería una exc", ex);
+                    LoggerService.GetLogger().Error("Mensaje de error", ex);
+                    throw;
                 }
+
+
 
                 new CustomerService().IsActive(null);
                 
