@@ -1,7 +1,9 @@
-﻿using Patrones.Memento;
+﻿using Patrones.Composite;
+using Patrones.Memento;
 using Patrones.Observer;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +14,65 @@ namespace Patrones
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("EJERCICIO MOTIVACIÓN COMPOSITE");
+
+            Console.WriteLine("Ingrese la ruta del directorio a recorrer:");
+            string path = Console.ReadLine();
+            if (!Directory.Exists(path))
+            {
+                Console.WriteLine("El path no existe.");
+                return;
+            }
+            Directorio raiz = ConstruirEstructuraDirectorio(new DirectoryInfo(path));
+            Console.WriteLine("Estructura del directorio:");
+            raiz.Mostrar();
+
             Console.WriteLine("EJERCICIO MOTIVACIÓN MEMENTO");
             Memento();
             Console.WriteLine("EJERCICIO MOTIVACIÓN OBSERVER");
             Observer();
+        }
+
+        static Directorio ConstruirEstructuraDirectorio(DirectoryInfo dirInfo)
+        {
+            var directorio = new Directorio(dirInfo.Name);
+
+            // Agregar archivos
+            FileInfo[] archivos;
+            try
+            {
+                archivos = dirInfo.GetFiles();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                // Si no se puede acceder, retornar directorio vacío o con nota
+                Console.WriteLine($"Acceso denegado a archivos en: {dirInfo.FullName}");
+                archivos = new FileInfo[0];
+            }
+
+            foreach (var archivo in archivos)
+            {
+                directorio.Agregar(new Archivo(archivo.Name));
+            }
+
+            // Agregar subdirectorios recursivamente
+            DirectoryInfo[] subdirs;
+            try
+            {
+                subdirs = dirInfo.GetDirectories();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                Console.WriteLine($"Acceso denegado a directorios en: {dirInfo.FullName}");
+                subdirs = new DirectoryInfo[0];
+            }
+
+            foreach (var subdir in subdirs)
+            {
+                directorio.Agregar(ConstruirEstructuraDirectorio(subdir));
+            }
+
+            return directorio;
         }
 
         private static void Observer()

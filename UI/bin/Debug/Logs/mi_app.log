@@ -2,3 +2,4 @@
 [2025-05-12 20:15:52.635 -03:00] [Error] Mensaje de error
 Excepción: System.Exception: Probando alguna Exception
    en UI.Program.Main(String[] args) en D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\UI\Program.cs:línea 29, StackTrace:    en UI.Program.Main(String[] args) en D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\UI\Program.cs:línea 29
+[2025-05-16 19:25:07.990 -03:00] [Information] Estamos probando el logger

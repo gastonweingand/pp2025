@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Composite\Archivo.cs" />
+    <Compile Include="Composite\ComponentBase.cs" />
+    <Compile Include="Composite\Directorio.cs" />
     <Compile Include="Memento\Caretaker.cs" />
     <Compile Include="Memento\Memento.cs" />
     <Compile Include="Memento\Personaje.cs" />
