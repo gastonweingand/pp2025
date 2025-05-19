@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Patrones.Composite.Archivo">
+    <Position X="3.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Composite\Archivo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Patrones.Composite.ComponenteBase">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Composite\ComponentBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Patrones.Composite.Directorio">
+    <Position X="5.75" Y="3" Width="1.5" />
+    <InheritanceLine Type="Patrones.Composite.ComponenteBase" ManuallyRouted="true">
+      <Path>
+        <Point X="5.5" Y="2.247" />
+        <Point X="5.5" Y="2.622" />
+        <Point X="6.5" Y="2.622" />
+        <Point X="6.5" Y="3" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="hijos" Type="Patrones.Composite.ComponenteBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.25" Y="3.812" />
+        <Point X="7.625" Y="3.812" />
+        <Point X="7.625" Y="1.438" />
+        <Point X="6.25" Y="1.438" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAgQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Composite\Directorio.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="hijos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

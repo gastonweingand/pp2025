@@ -16,9 +16,12 @@ namespace Patrones.Composite
         }
         public override void Mostrar(int indentacion = 0)
         {
-            Console.WriteLine(new string(' ', indentacion) + "Directorio " + Nombre);
+            Console.WriteLine(new string('-', indentacion) + "Directorio " + Nombre);
             foreach (var hijo in hijos)
             {
+                //En definitiva, es un método recursivo
+                //Se evidencia el uso del patrón, imprimiento, elementos hijos compuestos (Directorios)
+                //o hijos de tipo hoja Archivos
                 hijo.Mostrar(indentacion + 2);
             }
         }

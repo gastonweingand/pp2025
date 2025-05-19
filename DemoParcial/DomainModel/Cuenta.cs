@@ -8,7 +8,6 @@ namespace DemoParcial.DomainModel
 {
     public abstract class Cuenta
     {
-        public string Identificador { get; protected set; }
         public decimal Saldo { get; protected set; }
 
         public Cliente Cliente { get; set; }
@@ -28,6 +27,10 @@ namespace DemoParcial.DomainModel
                 throw new InvalidOperationException("Saldo insuficiente.");
             Saldo -= monto;
         }
+
+
+
+
 
         public abstract void Accept(ICuentaVisitor visitor);
         public abstract void AcceptOrigen(ITransferenciaVisitor visitor);

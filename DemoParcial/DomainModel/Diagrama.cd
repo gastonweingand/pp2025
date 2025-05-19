@@ -26,7 +26,7 @@
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AIAAAAAAAABAQAAAAACAAAAAAAAAkAAAAAIAAAAAAAA=</HashCode>
+      <HashCode>AIAAAAAAAABAQAAAAACAAAAAAAAAEAAAAAIAAAAAAAA=</HashCode>
       <FileName>DomainModel\Cuenta.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -42,14 +42,17 @@
   </Class>
   <Class Name="DemoParcial.DomainModel.Operacion">
     <Position X="6.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>EAAAAAAAAIAAAAEAAAAAAAAIBAACAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DomainModel\Operacion.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="TipoOperacion" />
-      <Property Name="CuentaDestino" />
       <Property Name="CuentaOrigen" />
+      <Property Name="CuentaDestino" />
+      <Property Name="TipoOperacion" />
     </ShowAsAssociation>
   </Class>
   <Enum Name="DemoParcial.DomainModel.TipoOperacion">

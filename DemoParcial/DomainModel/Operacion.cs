@@ -29,8 +29,8 @@ namespace DemoParcial.DomainModel
         public void MostrarInformacion()
         {
             Console.WriteLine($"Operación: {TipoOperacion}");
-            Console.WriteLine($"Cuenta Origen: {CuentaOrigen.Identificador}");
-            Console.WriteLine($"Cuenta Destino: {CuentaDestino.Identificador}");
+            Console.WriteLine($"Cliente Origen: {CuentaOrigen.Cliente.CUIT}");
+            Console.WriteLine($"Cliente Destino: {CuentaDestino.Cliente.CUIT}");
             Console.WriteLine($"Fecha: {Fecha}");
             Console.WriteLine($"Monto: {Monto}");
         }

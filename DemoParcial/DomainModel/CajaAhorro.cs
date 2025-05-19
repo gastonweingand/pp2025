@@ -10,12 +10,17 @@ namespace DemoParcial.DomainModel
     {
         public string CBU { get; }
 
-        public CajaAhorro(string cbu, string cuit)
+        public CajaAhorro(string cbu)
         {
             CBU = cbu;
-            Identificador = cbu;
             Saldo = 0m;
         }
+
+
+
+
+
+
 
         public override void Accept(ICuentaVisitor visitor)
         {

@@ -47,8 +47,8 @@
     <Compile Include="DomainModel\CajaAhorro.cs" />
     <Compile Include="DomainModel\Cliente.cs" />
     <Compile Include="DomainModel\Cuenta.cs" />
-    <Compile Include="DomainModel\ICuentaVisitor.cs" />
-    <Compile Include="DomainModel\ITransferenciaVisitor.cs" />
+    <Compile Include="Back\ICuentaVisitor.cs" />
+    <Compile Include="Back\ITransferenciaVisitor.cs" />
     <Compile Include="DomainModel\MonederoBTC.cs" />
     <Compile Include="DomainModel\Operacion.cs" />
     <Compile Include="DomainModel\TipoOperacion.cs" />
@@ -59,6 +59,9 @@
     <None Include="App.config" />
     <None Include="BLL\DiagramaServices.cd" />
     <None Include="DomainModel\Diagrama.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DAL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,6 +22,7 @@ namespace DemoParcial.DomainModel
         public void AgregarCuenta(Cuenta cuenta)
         {
             Cuentas.Add(cuenta);
+            cuenta.Cliente = this;
         }
     }
 }

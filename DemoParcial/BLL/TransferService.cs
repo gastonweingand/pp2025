@@ -24,8 +24,27 @@ namespace DemoParcial.BLL
                 throw new InvalidOperationException("Conversiones sólo permitidas entre cuentas del mismo titular.");
             }
 
+            
+
             // Retirar saldo primero para evitar problemas
             cuentaOrigen.Retirar(monto);
+
+            //Lógica para depositar o convertir...
+
+
+            //TODO eso debería ser una Transacción
+            //Begin Transaction
+            //1) Actualizar cuentaOrigen
+            //2) ACtualizar cuentaDestino
+
+            //Generar el objeto Operacion
+            Operacion operacion = new Operacion(cuentaOrigen, cuentaDestino, DateTime.Now, monto, TipoOperacion.TransferenciaATerceros);
+            //3) Guardar operacion
+            //commit
+
+
+
+
 
             // Creamos el visitante para la cuenta origen con toda la info necesaria
             var visitanteTransferencia = new VisitanteTransferencia()
@@ -38,7 +57,10 @@ namespace DemoParcial.BLL
             // Iniciamos doble despacho: cuenta origen acepta este visitante
             cuentaOrigen.AcceptOrigen(visitanteTransferencia);
 
-            // En este momento el visitante tendrá llamado el Accept de cuentaDestino para depositar con conversión
+
+            // Hay que crear la operación si todo salió bien...
+
+
         }
 
         // Clase visitante que trabaja con la cuenta origen, y luego hace doble despacho a cuenta destino
@@ -111,13 +133,13 @@ namespace DemoParcial.BLL
 
             private decimal ConvertirPesosABTC(decimal montoPesos)
             {
-                const decimal tasaPesosABtc = 0.000022m; // tasa fija ejemplo
+                const decimal tasaPesosABtc = 0.000000008338m; // tasa fija ejemplo
                 return montoPesos * tasaPesosABtc;
             }
 
             private decimal ConvertirBTCAPesos(decimal montoBtc)
             {
-                const decimal tasaBtcAPesos = 45000m; // tasa fija ejemplo
+                const decimal tasaBtcAPesos = 119928832; // tasa fija ejemplo
                 return montoBtc * tasaBtcAPesos;
             }
         }

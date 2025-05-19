@@ -13,9 +13,18 @@ namespace DemoParcial.DomainModel
         public MonederoBTC(string direccion)
         {
             Direccion = direccion;
-            Identificador = direccion;
             Saldo = 0m;
         }
+
+
+
+
+
+
+
+
+
+
 
         public override void Accept(ICuentaVisitor visitor)
         {

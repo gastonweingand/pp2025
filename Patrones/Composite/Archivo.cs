@@ -11,7 +11,7 @@ namespace Patrones.Composite
         public Archivo(string nombre) : base(nombre) { }
         public override void Mostrar(int indentacion = 0)
         {
-            Console.WriteLine(new string(' ', indentacion) + "Archivo " + Nombre);
+            Console.WriteLine(new string('-', indentacion) + "Archivo " + Nombre);
         }
     }
 }

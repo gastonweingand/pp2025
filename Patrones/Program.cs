@@ -45,7 +45,6 @@ namespace Patrones
             }
             catch (UnauthorizedAccessException)
             {
-                // Si no se puede acceder, retornar directorio vacío o con nota
                 Console.WriteLine($"Acceso denegado a archivos en: {dirInfo.FullName}");
                 archivos = new FileInfo[0];
             }
@@ -69,6 +68,7 @@ namespace Patrones
 
             foreach (var subdir in subdirs)
             {
+                // LLamada recursiva para construir el directorio hijo del directorio actual
                 directorio.Agregar(ConstruirEstructuraDirectorio(subdir));
             }
 
