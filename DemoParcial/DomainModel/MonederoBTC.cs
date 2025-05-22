@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoParcial.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,24 +17,5 @@ namespace DemoParcial.DomainModel
             Saldo = 0m;
         }
 
-
-
-
-
-
-
-
-
-
-
-        public override void Accept(ICuentaVisitor visitor)
-        {
-            visitor.VisitMonederoBTC(this);
-        }
-
-        public override void AcceptOrigen(ITransferenciaVisitor visitor)
-        {
-            visitor.VisitDesdeMonederoBTC(this);
-        }
     }
 }

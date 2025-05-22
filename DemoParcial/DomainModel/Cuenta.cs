@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoParcial.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace DemoParcial.DomainModel
         public decimal Saldo { get; protected set; }
 
         public Cliente Cliente { get; set; }
+
 
         public void Depositar(decimal monto)
         {
@@ -28,11 +30,5 @@ namespace DemoParcial.DomainModel
             Saldo -= monto;
         }
 
-
-
-
-
-        public abstract void Accept(ICuentaVisitor visitor);
-        public abstract void AcceptOrigen(ITransferenciaVisitor visitor);
     }
 }

@@ -43,12 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Test.cs" />
     <Compile Include="BLL\TransferService.cs" />
+    <Compile Include="DemoFiguras\Circulo.cs" />
+    <Compile Include="DemoFiguras\Cuadrado.cs" />
+    <Compile Include="DemoFiguras\Figura.cs" />
     <Compile Include="DomainModel\CajaAhorro.cs" />
     <Compile Include="DomainModel\Cliente.cs" />
     <Compile Include="DomainModel\Cuenta.cs" />
-    <Compile Include="Back\ICuentaVisitor.cs" />
-    <Compile Include="Back\ITransferenciaVisitor.cs" />
     <Compile Include="DomainModel\MonederoBTC.cs" />
     <Compile Include="DomainModel\Operacion.cs" />
     <Compile Include="DomainModel\TipoOperacion.cs" />

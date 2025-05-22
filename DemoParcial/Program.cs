@@ -1,17 +1,34 @@
-﻿using DemoParcial.BLL;
-using DemoParcial.DomainModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DemoParcial.BLL;
+using DemoParcial.DemoFiguras;
+using DemoParcial.DomainModel;
 
-namespace ExchangeApp.BLL
+namespace ExchangeApp
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Figura circulo1 = new CirculoFigura();
+            Figura circulo2 = new CirculoFigura();
+
+            Figura cuadrado1 = new CuadradoFigura();
+            Figura cuadrado2 = new CuadradoFigura();
+
+            circulo1.Colisionar(cuadrado1);
+            circulo1.Colisionar(circulo2);
+            cuadrado1.Colisionar(circulo1);
+            cuadrado1.Colisionar(cuadrado2);
+
+
+
+
+
+
             TransferService service = new TransferService();
 
             Cliente cliente = new Cliente("20312437210", "Pepe");
@@ -54,6 +71,8 @@ namespace ExchangeApp.BLL
 
             Console.Read();
         }
+
+
     }
 }
 

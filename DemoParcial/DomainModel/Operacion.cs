@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,15 +26,15 @@ namespace DemoParcial.DomainModel
             TipoOperacion = tipoOperacion;
         }
 
-        // Método para mostrar la información de la operación
-        public void MostrarInformacion()
+        public override string ToString()
         {
-            Console.WriteLine($"Operación: {TipoOperacion}");
-            Console.WriteLine($"Cliente Origen: {CuentaOrigen.Cliente.CUIT}");
-            Console.WriteLine($"Cliente Destino: {CuentaDestino.Cliente.CUIT}");
-            Console.WriteLine($"Fecha: {Fecha}");
-            Console.WriteLine($"Monto: {Monto}");
+            string data = $"Fecha: {Fecha}" + $" Operación: {TipoOperacion} "  + $"Monto: {Monto}\n";
+            data += $"Cliente Origen: {CuentaOrigen.Cliente.CUIT}\n";
+            data += $"Cliente Destino: {CuentaDestino.Cliente.CUIT}\n";
+            return data;
         }
+
+        // Método para mostrar la información de la operación
     }
 
 }
