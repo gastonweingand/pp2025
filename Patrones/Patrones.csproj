@@ -51,7 +51,7 @@
     <Compile Include="Memento\Personaje.cs" />
     <Compile Include="Observer\IObservador.cs" />
     <Compile Include="Observer\Noticia.cs" />
-    <Compile Include="Observer\Revistar.cs" />
+    <Compile Include="Observer\Revista.cs" />
     <Compile Include="Observer\Suscriptor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

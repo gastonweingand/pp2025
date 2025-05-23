@@ -13,18 +13,28 @@ namespace ExchangeApp
     {
         static void Main(string[] args)
         {
-        //    Figura circulo1 = new CirculoFigura();
-        //    Figura circulo2 = new CirculoFigura();
+            Figura circulo1 = new CirculoFigura();
+            Figura circulo2 = new CirculoFigura();
 
-        //    Figura cuadrado1 = new CuadradoFigura();
-        //    Figura cuadrado2 = new CuadradoFigura();
+            Figura cuadrado1 = new CuadradoFigura();
+            Figura cuadrado2 = new CuadradoFigura();
 
-        //    circulo1.Colisionar(cuadrado1);
-        //    circulo1.Colisionar(circulo2);
-        //    cuadrado1.Colisionar(circulo1);
-        //    cuadrado1.Colisionar(cuadrado2);
+            List<Figura> figuras = new List<Figura>();
+            figuras.Add(circulo1);
+            figuras.Add(circulo2);
+            figuras.Add(cuadrado1);
+            figuras.Add(cuadrado2);
 
-
+            for (int j = 0; j < figuras.Count; j++)
+            {
+                for (int i = 0; i < figuras.Count; i++)
+                {
+                    if (j != i) //No colisiono consigo mismo
+                    {
+                        figuras[j].Colisionar(figuras[i]);
+                    }
+                }
+            }
 
             TransferService service = new TransferService();
 

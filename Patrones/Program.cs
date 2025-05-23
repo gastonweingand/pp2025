@@ -14,6 +14,10 @@ namespace Patrones
     {
         static void Main(string[] args)
         {
+            Observer();
+
+
+
             Console.WriteLine("EJERCICIO MOTIVACIÓN COMPOSITE");
 
             Console.WriteLine("Ingrese la ruta del directorio a recorrer:");
