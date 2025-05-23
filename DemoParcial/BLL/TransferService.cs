@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,9 @@ namespace DemoParcial.BLL
             if (esConversion && !mismoTitular)
                 throw new InvalidOperationException("Conversiones sólo permitidas entre cuentas del mismo titular.");
 
+            //Comienzo de la transacción
+
+            //begin tran
             cuentaOrigen.Retirar(monto);
 
             // Despacho dinámico
@@ -29,11 +33,22 @@ namespace DemoParcial.BLL
 
             Console.WriteLine(operacion);
 
-            //Operacion operacion = new Operacion(cuentaOrigen, cuentaDestino, DateTime.Now, monto, TipoOperacion.TransferenciaATerceros);
+            //Ir al repositorio
+            //1) Actualizar la cuenta origen
+            //2) Actualizar la cuenta destino
+            //3) Insertar la operacion
+            //commit tran
+
             // Guardar operación, persistencia, etc.
         }
 
         private Operacion ProcesarTransferencia(CajaAhorro origen, CajaAhorro destino, decimal monto)
+        {
+            destino.Depositar(monto);
+            return new Operacion(origen, destino, DateTime.Now, monto, TipoOperacion.TransferenciaATerceros);
+        }
+
+        private Operacion ProcesarTransferencia(MonederoBTC origen, MonederoBTC destino, decimal monto)
         {
             destino.Depositar(monto);
             return new Operacion(origen, destino, DateTime.Now, monto, TipoOperacion.TransferenciaATerceros);
@@ -44,7 +59,6 @@ namespace DemoParcial.BLL
             decimal convertido = ConvertirPesosABTC(monto);
             destino.Depositar(convertido);
             return new Operacion(origen, destino, DateTime.Now, monto, TipoOperacion.Conversion);
-
         }
 
         private Operacion ProcesarTransferencia(MonederoBTC origen, CajaAhorro destino, decimal monto)
@@ -52,14 +66,6 @@ namespace DemoParcial.BLL
             decimal convertido = ConvertirBTCAPesos(monto);
             destino.Depositar(convertido);
             return new Operacion(origen, destino, DateTime.Now, monto, TipoOperacion.Conversion);
-
-        }
-
-        private Operacion ProcesarTransferencia(MonederoBTC origen, MonederoBTC destino, decimal monto)
-        {
-            destino.Depositar(monto);
-            return new Operacion(origen, destino, DateTime.Now, monto, TipoOperacion.TransferenciaATerceros);
-
         }
 
         // Exception si no hay sobrecarga adecuada

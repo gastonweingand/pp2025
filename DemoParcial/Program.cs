@@ -13,19 +13,16 @@ namespace ExchangeApp
     {
         static void Main(string[] args)
         {
-            Figura circulo1 = new CirculoFigura();
-            Figura circulo2 = new CirculoFigura();
+        //    Figura circulo1 = new CirculoFigura();
+        //    Figura circulo2 = new CirculoFigura();
 
-            Figura cuadrado1 = new CuadradoFigura();
-            Figura cuadrado2 = new CuadradoFigura();
+        //    Figura cuadrado1 = new CuadradoFigura();
+        //    Figura cuadrado2 = new CuadradoFigura();
 
-            circulo1.Colisionar(cuadrado1);
-            circulo1.Colisionar(circulo2);
-            cuadrado1.Colisionar(circulo1);
-            cuadrado1.Colisionar(cuadrado2);
-
-
-
+        //    circulo1.Colisionar(cuadrado1);
+        //    circulo1.Colisionar(circulo2);
+        //    cuadrado1.Colisionar(circulo1);
+        //    cuadrado1.Colisionar(cuadrado2);
 
 
 
@@ -57,7 +54,11 @@ namespace ExchangeApp
 
             Cliente cliente2 = new Cliente("27312437210", "María");
             CajaAhorro cajaAhorro2 = new CajaAhorro("6664567890123456789000");
+            MonederoBTC monederoBTC2 = new MonederoBTC("FF");
+            monederoBTC2.Depositar(1);
+
             cliente2.AgregarCuenta(cajaAhorro2);
+            cliente2.AgregarCuenta(monederoBTC2);
 
             Console.WriteLine("Antes de transferir de $ a $");
             Console.WriteLine($"Caja Ahorro 1 $: {cajaAhorro.Saldo}");
@@ -68,6 +69,16 @@ namespace ExchangeApp
             Console.WriteLine("Después de transferir de $ a $");
             Console.WriteLine($"Caja Ahorro 1 $: {cajaAhorro.Saldo}");
             Console.WriteLine($"Caja Ahorro 2 $: {cajaAhorro2.Saldo}");
+
+            Console.WriteLine("Antes de transferir de BTC a BTC");
+            Console.WriteLine($"BTC 1 $: {monederoBTC2.Saldo}");
+            Console.WriteLine($"BTC 2 $: {mon.Saldo}");            
+
+            service.Transferir(monederoBTC2, mon, (decimal)0.5);
+
+            Console.WriteLine("Después de transferir de BTC a BTC");
+            Console.WriteLine($"BTC 1 $: {monederoBTC2.Saldo}");
+            Console.WriteLine($"BTC 2 $: {mon.Saldo}");
 
             Console.Read();
         }
