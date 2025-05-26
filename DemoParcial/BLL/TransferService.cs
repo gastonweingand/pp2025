@@ -60,7 +60,6 @@ namespace DemoParcial.BLL
             destino.Depositar(convertido);
             return new Operacion(origen, destino, DateTime.Now, monto, TipoOperacion.Conversion);
         }
-
         private Operacion ProcesarTransferencia(MonederoBTC origen, CajaAhorro destino, decimal monto)
         {
             decimal convertido = ConvertirBTCAPesos(monto);

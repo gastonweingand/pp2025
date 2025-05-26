@@ -50,6 +50,9 @@ namespace Patrones.Memento
             else if (tipoGolpe == TipoGolpe.Fuerte) 
                 Salud -= 20;
 
+            //Si me pegan, debo resetear el contador ganador
+            golpeContador = 0;
+
             if (Salud < 0) Salud = 0;  
         }
 
@@ -68,7 +71,7 @@ namespace Patrones.Memento
             }
         }
 
-        public void RestaurarMemento(Memento memento)
+        private void RestaurarMemento(Memento memento)
         {
             Salud = memento.Salud;
         }

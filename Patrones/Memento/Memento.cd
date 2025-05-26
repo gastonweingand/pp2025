@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Patrones.Memento.Caretaker">
+    <Position X="5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAgACAAAAAAAAAAAAAgQA=</HashCode>
+      <FileName>Memento\Caretaker.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="mementos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Patrones.Memento.Memento">
+    <Position X="7.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Memento\Memento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Patrones.Memento.Personaje">
+    <Position X="3.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAgAAQCAAIgIQAAAQAAQACAAAAgAAAAAA=</HashCode>
+      <FileName>Memento\Personaje.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Patrones.Memento.TipoGolpe">
+    <Position X="5.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Memento\Personaje.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

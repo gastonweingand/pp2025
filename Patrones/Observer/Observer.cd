@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Patrones.Observer.Noticia">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Observer\Noticia.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Patrones.Observer.Revista">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEQAAAAAAAAAAAAAAAgAAAAAAEAAAAAAAAAAAGAAA=</HashCode>
+      <FileName>Observer\Revista.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="suscriptores" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Patrones.Observer.Suscriptor">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Observer\Suscriptor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Patrones.Observer.IObservador">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Observer\IObservador.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

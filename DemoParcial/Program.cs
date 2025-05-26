@@ -15,7 +15,6 @@ namespace ExchangeApp
         {
             Figura circulo1 = new CirculoFigura();
             Figura circulo2 = new CirculoFigura();
-
             Figura cuadrado1 = new CuadradoFigura();
             Figura cuadrado2 = new CuadradoFigura();
 

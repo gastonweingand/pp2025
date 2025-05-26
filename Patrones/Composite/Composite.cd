@@ -24,7 +24,7 @@
         <Point X="6.5" Y="3" />
       </Path>
     </InheritanceLine>
-    <AssociationLine Name="hijos" Type="Patrones.Composite.ComponenteBase" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="hijos" Type="Patrones.Composite.ComponenteBase" ManuallyRouted="true">
       <Path>
         <Point X="7.25" Y="3.812" />
         <Point X="7.625" Y="3.812" />

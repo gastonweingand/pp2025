@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CCE33F41-FB0D-43F1-83D5-E6949DACBDD4}</ProjectGuid>
+    <ProjectGuid>{C7544991-E96C-494D-BAD6-C98BD8ACD9CA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Patrones</RootNamespace>
-    <AssemblyName>Patrones</AssemblyName>
+    <RootNamespace>DemoFiguras</RootNamespace>
+    <AssemblyName>DemoFiguras</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,25 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Composite\Archivo.cs" />
-    <Compile Include="Composite\ComponentBase.cs" />
-    <Compile Include="Composite\Directorio.cs" />
-    <Compile Include="Memento\Caretaker.cs" />
-    <Compile Include="Memento\Memento.cs" />
-    <Compile Include="Memento\Personaje.cs" />
-    <Compile Include="Observer\IObservador.cs" />
-    <Compile Include="Observer\Noticia.cs" />
-    <Compile Include="Observer\Revista.cs" />
-    <Compile Include="Observer\Suscriptor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Circulo.cs" />
+    <Compile Include="Services\Cuadrado.cs" />
+    <Compile Include="Services\Figura.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Composite\Composite.cd" />
-    <None Include="Memento\Memento.cd" />
-    <None Include="Observer\Observer.cd" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

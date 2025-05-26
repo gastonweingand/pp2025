@@ -14,9 +14,8 @@ namespace Patrones
     {
         static void Main(string[] args)
         {
+            Memento();
             Observer();
-
-
 
             Console.WriteLine("EJERCICIO MOTIVACIÓN COMPOSITE");
 
@@ -113,6 +112,7 @@ namespace Patrones
             //Estado inicial antes de iniciar la lucha cuerpo a cuerpo
             personajeGanador.MostrarEstado();
             personajeObjetivo.MostrarEstado();
+
 
             //Personaje objetivo le quita salud al ganador
             personajeObjetivo.DarGolpe(personajeGanador, TipoGolpe.Fuerte);
