@@ -1,4 +1,6 @@
-﻿using Patrones.Composite;
+﻿using Patrones.Aop;
+using Patrones.Composite;
+using Patrones.Decorator;
 using Patrones.Memento;
 using Patrones.Observer;
 using System;
@@ -10,10 +12,53 @@ using System.Threading.Tasks;
 
 namespace Patrones
 {
+    [PerformanceAspect]
     internal class Program
     {
+        //[PerformanceAspect]
+        public static void ProcesarConPerformance()
+        {
+            Console.WriteLine("Ejecutando tarea...");
+            System.Threading.Thread.Sleep(500); // Simulación de proceso pesado
+        }
+
+        //[DebugAspect]
+        public static void ProcesarConDebug()
+        {
+            Console.WriteLine("Ejecutando lógica de negocio...");
+        }
+
+        //[DebugAspect] 
+        //[PerformanceAspect] //Ejecuta primero
+        public static void ProcesarFull()
+        {
+            Console.WriteLine("Soy un decorator?");
+        }
+
         static void Main(string[] args)
         {
+            ProcesarConDebug();
+            ProcesarConPerformance();
+            ProcesarFull();
+
+            //Decorator
+            INotificacion notificacion = new NotificacionBasica();
+
+            notificacion.Enviar("Prueba básica");
+
+            notificacion = new NotificacionEncriptada(notificacion);
+            notificacion.Enviar("Prueba con criptografía");
+
+            notificacion = new NotificacionConHistorial(notificacion);
+
+            notificacion.Enviar("Prueba con historial y criptografía");
+
+            notificacion = new NotificacionPrioritaria(notificacion);
+
+            notificacion.Enviar("Prueba con todos los decoradores aplicados");          
+            
+
+
             Memento();
             Observer();
 

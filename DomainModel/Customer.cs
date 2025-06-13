@@ -14,6 +14,7 @@ namespace DomainModel
         /// <summary>
         /// 
         /// </summary>
+        /// 
         public Guid IdCustomer { get; set; }
 
         /// <summary>
