@@ -1,6 +1,0 @@
-D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\Services\bin\Debug\Services.dll
-D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\Services\bin\Debug\Services.pdb
-D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\Services\obj\Debug\Services.csproj.AssemblyReference.cache
-D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
-D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\Services\obj\Debug\Services.dll
-D:\Facultad\Colegio universitario\Prácticas Profesionalizantes III\DemoBase\DemoBase\Services\obj\Debug\Services.pdb

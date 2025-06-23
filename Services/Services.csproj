@@ -54,6 +54,7 @@
     <Compile Include="DomainModel\Logging\LogEntry.cs" />
     <Compile Include="DomainModel\Logging\LogLevel.cs" />
     <Compile Include="DomainModel\User.cs" />
+    <Compile Include="Facade\CryptographyService.cs" />
     <Compile Include="Facade\Extensions\IdiomaExtension.cs" />
     <Compile Include="Facade\LoggerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

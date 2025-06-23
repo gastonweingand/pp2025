@@ -21,8 +21,21 @@ namespace UI
         {
             try
             {
-                LoggerService.GetLogger().Information("Estamos probando el logger");
+                string hashValue = CryptographyService.HashMd5("pepe");
 
+                Console.WriteLine($"Hash MD5: {hashValue}");
+
+                string original = "Texto original";
+
+                string encrypted = CryptographyService.Encrypt(original);
+
+                Console.WriteLine($"Texto encriptado: {encrypted}");
+
+                string decrypted = CryptographyService.Decrypt(encrypted);
+
+                Console.WriteLine($"Texto desencriptado: {decrypted}");
+
+                LoggerService.GetLogger().Information("Estamos probando el logger");
 
                 try
                 {
@@ -33,9 +46,6 @@ namespace UI
                     LoggerService.GetLogger().Error("Mensaje de error", ex);
                     throw;
                 }
-
-
-
                 new CustomerService().IsActive(null);
                 
 

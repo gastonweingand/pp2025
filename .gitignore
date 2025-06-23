@@ -87,3 +87,12 @@
 /Patrones/obj/Debug/Patrones.exe._asi_refs
 /Patrones/obj/Debug/Patrones.csproj.AssemblyReference.cache
 /UI/.vs
+/.vs
+/Bll/obj/Debug/Bll.csproj.CoreCompileInputs.cache
+/Bll/obj/Debug/Bll.csproj.FileListAbsolute.txt
+/DomainModel/obj/Debug/DomainModel.csproj.FileListAbsolute.txt
+/Services/obj/Debug/Services.csproj.FileListAbsolute.txt
+/UI/bin/Debug/DomainModel.dll
+/UI/bin/Debug/DomainModel.pdb
+/UI/obj/Debug/UI.csproj.CoreCompileInputs.cache
+/UI/obj/Debug/UI.exe.config
