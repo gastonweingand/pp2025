@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services.Facade;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,7 +38,19 @@ namespace Services.DomainModel
 
         public string Email { get; set; }
 
-        public string Password { get; set; }
+        private string password;
+
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+            set
+            {
+                password = CryptographyService.HashMd5(value);
+            }
+        }
 
         public bool enable { get; set; }
 
@@ -58,7 +71,7 @@ namespace Services.DomainModel
         /// </summary>
         private User()
         {
-            Console.WriteLine("Construyendo el objeto User");            
+            Console.WriteLine("Construyendo el objeto User");
         }
 
         #endregion
