@@ -13,8 +13,8 @@ using System.IO;
 
 
 
-using Patrones;
-namespace Patrones {
+namespace Services.DomainModel
+{
 	/// <summary>
 	/// This class (a) defines behaviour for components having children, (b) stores
 	/// child components, and (c) implements child-related operations in the Component

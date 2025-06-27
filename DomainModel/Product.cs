@@ -15,6 +15,8 @@ namespace DomainModel
 
         public string Description { get; set; }
 
+        public Category Categoria { get; set; }
+
         /// <summary>
         /// Quién quiere este dato?
         /// </summary>

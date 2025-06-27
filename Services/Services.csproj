@@ -43,20 +43,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bll\IdiomaService.cs" />
+    <Compile Include="Dal\Implementations\Adapters\FamiliaAdapter.cs" />
+    <Compile Include="Dal\Implementations\Adapters\UsuarioAdapter.cs" />
+    <Compile Include="Dal\Implementations\FamiliaRepository.cs" />
+    <Compile Include="Dal\Interfaces\IFamiliaRepository.cs" />
+    <Compile Include="Dal\Implementations\UsuarioFamiliaRepository.cs" />
+    <Compile Include="Dal\Implementations\UsuarioRepository.cs" />
+    <Compile Include="Dal\Interfaces\IAdapter.cs" />
+    <Compile Include="Dal\Interfaces\IJoinRepository.cs" />
+    <Compile Include="Dal\Interfaces\IUsuarioRepository.cs" />
     <Compile Include="Bll\LoggerConfiguration.cs" />
+    <Compile Include="Bll\UsuarioBll.cs" />
     <Compile Include="Dal\IdiomaRepository.cs" />
     <Compile Include="Dal\Implementations\FileLogger.cs" />
     <Compile Include="Dal\Interfaces\ILogger.cs" />
+    <Compile Include="Dal\Tools\SqlHelper.cs" />
     <Compile Include="DomainModel\Composite\Component.cs" />
     <Compile Include="DomainModel\Composite\Familia.cs" />
     <Compile Include="DomainModel\Composite\Patente.cs" />
     <Compile Include="DomainModel\Exceptions\WordNotFoundException.cs" />
     <Compile Include="DomainModel\Logging\LogEntry.cs" />
     <Compile Include="DomainModel\Logging\LogLevel.cs" />
-    <Compile Include="DomainModel\User.cs" />
+    <Compile Include="DomainModel\Composite\Usuario.cs" />
     <Compile Include="Facade\CryptographyService.cs" />
     <Compile Include="Facade\Extensions\IdiomaExtension.cs" />
     <Compile Include="Facade\LoggerService.cs" />
+    <Compile Include="Facade\LoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

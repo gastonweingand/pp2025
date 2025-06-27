@@ -57,7 +57,7 @@ namespace Dal.Implementations.Memory
 
         public IEnumerable<Customer> GetByCreationDate(DateTime date)
         {
-            User.GetInstance().Email = "keeke";
+            //User.GetInstance().Email = "keeke";
             
 
             throw new NotImplementedException();

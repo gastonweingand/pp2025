@@ -13,8 +13,8 @@ using System.IO;
 
 
 
-using Patrones;
-namespace Patrones {
+namespace Services.DomainModel
+{
 	/// <summary>
 	/// This class (a) represents leaf objects in the composition, and (b) defines
 	/// behaviour for primitive objects in the composition.

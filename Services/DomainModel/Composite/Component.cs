@@ -13,15 +13,15 @@ using System.IO;
 
 
 
-namespace Patrones {
-	/// <summary>
-	/// This class (a) declares the interface for objects in the composition, (b)
-	/// implements default behaviour for the interface common to all classes, as
-	/// appropriate, (c) declares an interface for accessing and managing its child
-	/// components, and (d) optionally defines an interface for accessing a component's
-	/// parent in the recursive structure and implements it if that's appropriate.
-	/// </summary>
-	public abstract class Component {
+namespace Services.DomainModel { 
+    /// <summary>
+    /// This class (a) declares the interface for objects in the composition, (b)
+    /// implements default behaviour for the interface common to all classes, as
+    /// appropriate, (c) declares an interface for accessing and managing its child
+    /// components, and (d) optionally defines an interface for accessing a component's
+    /// parent in the recursive structure and implements it if that's appropriate.
+    /// </summary>
+    public abstract class Component {
 
         public string Nombre { get; set; }
 

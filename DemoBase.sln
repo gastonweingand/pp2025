@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoParcial", "DemoParcial\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoFiguras", "DemoFiguras\DemoFiguras.csproj", "{C7544991-E96C-494D-BAD6-C98BD8ACD9CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinUI", "WinUI\WinUI.csproj", "{BD0A63D5-E769-465E-BF3D-EA005FFAF840}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,8 +59,15 @@ Global
 		{C7544991-E96C-494D-BAD6-C98BD8ACD9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7544991-E96C-494D-BAD6-C98BD8ACD9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7544991-E96C-494D-BAD6-C98BD8ACD9CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD0A63D5-E769-465E-BF3D-EA005FFAF840}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD0A63D5-E769-465E-BF3D-EA005FFAF840}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD0A63D5-E769-465E-BF3D-EA005FFAF840}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD0A63D5-E769-465E-BF3D-EA005FFAF840}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAE0EA87-00DD-4E6A-94EE-BFD7001D8CEC}
 	EndGlobalSection
 EndGlobal

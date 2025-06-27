@@ -104,16 +104,16 @@ namespace UI
 
                 try
                 {
-                    User user1 = User.GetInstance();
-                    user1.Name = "Fernando";
-                    Console.WriteLine($"El nombre de user1 es {user1.Name}");
+                    //User user1 = User.GetInstance();
+                    //user1.Name = "Fernando";
+                    //Console.WriteLine($"El nombre de user1 es {user1.Name}");
 
-                    User user2 = User.GetInstance();
-                    user2.Name = "Melina";
-                    Console.WriteLine($"El nombre de user2 es {user2.Name}");
+                    //User user2 = User.GetInstance();
+                    //user2.Name = "Melina";
+                    //Console.WriteLine($"El nombre de user2 es {user2.Name}");
 
 
-                    Console.WriteLine($"El nombre de user1 es {user1.Name}");
+                    //Console.WriteLine($"El nombre de user1 es {user1.Name}");
 
                     //Console.WriteLine(user1 == user2); //true Por qué???, Puntero es igual
 
