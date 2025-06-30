@@ -20,11 +20,16 @@ namespace Services.DomainModel
 	/// child components, and (c) implements child-related operations in the Component
 	/// interface.
 	/// </summary>
+	/// 
+
+	
 	public class Familia : Component {
 
 		private List<Component> hijos = new List<Component>();
 
-		public Familia(){
+        public string Nombre { get; set; }
+
+        public Familia(){
 
 		}
 

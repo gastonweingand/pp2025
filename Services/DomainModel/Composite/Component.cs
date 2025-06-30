@@ -23,8 +23,6 @@ namespace Services.DomainModel {
     /// </summary>
     public abstract class Component {
 
-        public string Nombre { get; set; }
-
         public Guid Id { get; set; }
         public Component(){
 

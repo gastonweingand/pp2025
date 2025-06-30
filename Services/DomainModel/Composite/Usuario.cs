@@ -22,6 +22,11 @@ namespace Services.DomainModel
         ///
         public List<Component> Privilegios { get; set; }
 
+        /// <summary>
+        /// Generar recursividad sobre el composite para obtener el menú de opciones
+        /// </summary>
+        public List<Patente> Patentes { get; set; }
+
         public string Password
         {
             get

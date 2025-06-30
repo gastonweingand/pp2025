@@ -21,7 +21,10 @@ namespace Services.DomainModel
 	/// </summary>
 	public class Patente : Component {
 
-		public Patente(){
+        public string DataKey { get; set; }
+
+        public TipoAcceso TipoAcceso { get; set; }
+        public Patente(){
 
 		}
 
@@ -40,7 +43,7 @@ namespace Services.DomainModel
 
     }//end Patente
 
-	public enum TipoPatente
+	public enum TipoAcceso
 	{
 		Pantalla,
 		CasoUso,

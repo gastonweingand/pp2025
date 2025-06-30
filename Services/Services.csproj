@@ -44,13 +44,17 @@
   <ItemGroup>
     <Compile Include="Bll\IdiomaService.cs" />
     <Compile Include="Dal\Implementations\Adapters\FamiliaAdapter.cs" />
+    <Compile Include="Dal\Implementations\Adapters\PatenteAdapter.cs" />
     <Compile Include="Dal\Implementations\Adapters\UsuarioAdapter.cs" />
     <Compile Include="Dal\Implementations\FamiliaRepository.cs" />
+    <Compile Include="Dal\Implementations\PatenteRepository.cs" />
+    <Compile Include="Dal\Implementations\UsuarioPatenteRepository.cs" />
     <Compile Include="Dal\Interfaces\IFamiliaRepository.cs" />
     <Compile Include="Dal\Implementations\UsuarioFamiliaRepository.cs" />
     <Compile Include="Dal\Implementations\UsuarioRepository.cs" />
     <Compile Include="Dal\Interfaces\IAdapter.cs" />
     <Compile Include="Dal\Interfaces\IJoinRepository.cs" />
+    <Compile Include="Dal\Interfaces\IPatenteRepository.cs" />
     <Compile Include="Dal\Interfaces\IUsuarioRepository.cs" />
     <Compile Include="Bll\LoggerConfiguration.cs" />
     <Compile Include="Bll\UsuarioBll.cs" />

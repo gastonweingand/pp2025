@@ -45,7 +45,7 @@ namespace Services.Dal.Implementations.Adapters
 
             usuario.Privilegios.AddRange(new UsuarioFamiliaRepository().GetByObject(usuario));
 
-            //usuario.Privilegios.AddRange(new UsuarioPatenteRepository().GetByObject(usuario));
+            usuario.Privilegios.AddRange(new UsuarioPatenteRepository().GetByObject(usuario));
 
             return usuario;
         }
