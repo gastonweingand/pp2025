@@ -71,6 +71,11 @@
     <Compile Include="Facade\LoginService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Dal\DataBase\SecurityDB.bak" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dal\DataBase\scriptNEWSecutiry.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
