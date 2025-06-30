@@ -42,15 +42,6 @@ namespace Services.Dal.Implementations
                     dataReader.GetValues(data);
 
                     return UsuarioAdapter.Current.Get(data);
-
-                    //return new Usuario
-                    //(
-                    //    dataReader.GetGuid(dataReader.GetOrdinal("IdUsuario")),
-                    //    dataReader.GetString(dataReader.GetOrdinal("Nombre")),
-                    //    dataReader.GetString(dataReader.GetOrdinal("Email")),
-                    //    dataReader.GetString(dataReader.GetOrdinal("Password")),
-                    //    dataReader.GetBoolean(dataReader.GetOrdinal("Habilitado"))
-                    //);
                 }
                 return null;
             }

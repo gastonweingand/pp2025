@@ -40,4 +40,13 @@ namespace Services.DomainModel
 
     }//end Patente
 
+	public enum TipoPatente
+	{
+		Pantalla,
+		CasoUso,
+		Servicio,
+		SP,
+		Tabla
+    }
+
 }//end namespace Patrones

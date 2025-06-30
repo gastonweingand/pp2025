@@ -98,3 +98,6 @@
 /UI/obj/Debug/UI.exe.config
 /DomainModel/obj/Debug/DomainMo.6BFF71DD.Up2Date
 /DomainModel/obj/Debug/DomainModel.csproj.CoreCompileInputs.cache
+/DomainModel/bin/Debug
+/WinUI/bin/Debug
+/WinUI/obj/Debug

@@ -10,7 +10,6 @@ namespace Services.Facade
 {
     public static class LoginService
     {
-
         public static Usuario ValidarCredenciales(string user, string password)
         {
             return UsuarioBll.ValidarCredenciales(user, password);

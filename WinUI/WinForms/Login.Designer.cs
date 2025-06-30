@@ -34,6 +34,11 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.lnkRecuperacion = new System.Windows.Forms.LinkLabel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnuVentas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmGestionVentas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmNuevaVenta = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblUsuario
@@ -89,6 +94,39 @@
             this.lnkRecuperacion.TabStop = true;
             this.lnkRecuperacion.Text = "¿Olvidó su contraseña?";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuVentas});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(548, 33);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnuVentas
+            // 
+            this.mnuVentas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmGestionVentas,
+            this.tsmNuevaVenta});
+            this.mnuVentas.Name = "mnuVentas";
+            this.mnuVentas.Size = new System.Drawing.Size(80, 29);
+            this.mnuVentas.Text = "Ventas";
+            // 
+            // tsmGestionVentas
+            // 
+            this.tsmGestionVentas.Name = "tsmGestionVentas";
+            this.tsmGestionVentas.Size = new System.Drawing.Size(270, 34);
+            this.tsmGestionVentas.Text = "Gestión";
+            // 
+            // tsmNuevaVenta
+            // 
+            this.tsmNuevaVenta.Name = "tsmNuevaVenta";
+            this.tsmNuevaVenta.Size = new System.Drawing.Size(270, 34);
+            this.tsmNuevaVenta.Text = "Nueva";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -100,10 +138,14 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +159,9 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Button btnIniciar;
         private System.Windows.Forms.LinkLabel lnkRecuperacion;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnuVentas;
+        private System.Windows.Forms.ToolStripMenuItem tsmGestionVentas;
+        private System.Windows.Forms.ToolStripMenuItem tsmNuevaVenta;
     }
 }

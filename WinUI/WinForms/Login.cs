@@ -26,6 +26,7 @@ namespace WinUI
                 //Validamos las credenciales del usuario
                 Usuario usuario = LoginService.ValidarCredenciales(txtUsuario.Text, txtContraseña.Text);
                 //Si las credenciales son correctas, mostramos un mensaje de bienvenida
+                
                 MessageBox.Show($"Bienvenido {usuario.Nombre} ");
                 //Cerramos el formulario de login
                 this.Close();
@@ -41,10 +42,10 @@ namespace WinUI
         private void Login_Load(object sender, EventArgs e)
         {
             //Primero vamos a crear un usuario admin con una pass hasheada
-            LoginService.RegistrarUsuario(new Usuario( "admin", 
-                "gaston.weingand@uai.edu.ar", "admin" ));
+            //LoginService.RegistrarUsuario(new Usuario( "gaston", 
+            //    "gastonweingand@gmail.com", "1234" ));
 
-            Console.WriteLine($"Contraseña: {CryptographyService.HashMd5("admin")}");
+            //Console.WriteLine($"Contraseña: {CryptographyService.HashMd5("admin")}");
 
         }
     }
