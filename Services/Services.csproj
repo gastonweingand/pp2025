@@ -46,6 +46,8 @@
     <Compile Include="Dal\Implementations\Adapters\FamiliaAdapter.cs" />
     <Compile Include="Dal\Implementations\Adapters\PatenteAdapter.cs" />
     <Compile Include="Dal\Implementations\Adapters\UsuarioAdapter.cs" />
+    <Compile Include="Dal\Implementations\FamiliaFamiliaRepository.cs" />
+    <Compile Include="Dal\Implementations\FamiliaPatenteRepository.cs" />
     <Compile Include="Dal\Implementations\FamiliaRepository.cs" />
     <Compile Include="Dal\Implementations\PatenteRepository.cs" />
     <Compile Include="Dal\Implementations\UsuarioPatenteRepository.cs" />

@@ -41,12 +41,22 @@ namespace Services.DomainModel
 			hijos.Add(component);
 		}
 
-		/// 
-		/// <param name="component"></param>
-		public override void Remove(Component component){
+		public void AddRange(IEnumerable<Component> components)
+		{
+			hijos.AddRange(components);
+        }
+
+        /// 
+        /// <param name="component"></param>
+        public override void Remove(Component component){
 			component.Remove(component);
 		}
 
-	}//end Familia
+		public List<Component> GetHijos()
+		{
+			return hijos;
+        }
+
+    }//end Familia
 
 }//end namespace Patrones

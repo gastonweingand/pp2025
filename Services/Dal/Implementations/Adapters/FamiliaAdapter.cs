@@ -32,6 +32,11 @@ namespace Services.Dal.Implementations.Adapters
             Familia familia = new Familia();
             familia.Id = Guid.Parse(values[0].ToString());
             familia.Nombre = values[1].ToString();
+
+            familia.AddRange(new FamiliaFamiliaRepository().GetByObject(familia));
+
+            familia.AddRange(new FamiliaPatenteRepository().GetByObject(familia));
+
             return familia;
         }
     }
