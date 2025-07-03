@@ -27,33 +27,8 @@ namespace Services.DomainModel
         /// </summary>
         public List<Patente> Patentes
         {
-            get
-            {
-                List<Patente> patentes = new List<Patente>();
-                RecorrerFamilias(patentes, Privilegios);
-                return patentes;
-            }
         }
 
-        /// <summary>
-        /// Recorre las familias y patentes de un usuario
-        /// </summary>
-        /// <param name="patentes">Lista de patentes</param>
-        /// <param name="componentes">Lista de componentes que se recorren</param>
-        private void RecorrerFamilias(List<Patente> patentes, List<Component> componentes)
-        {
-            foreach (var componente in componentes)
-            {
-                if (componente is Patente patente)
-                {
-                    patentes.Add(patente);
-                }
-                else if (componente is Familia familia)
-                {
-                    RecorrerFamilias(patentes, familia.GetHijos());
-                }
-            }
-        }
 
         public string Password
         {
