@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinUI.WinForms;
 
 namespace WinUI
 {
@@ -27,9 +28,17 @@ namespace WinUI
                 Usuario usuario = LoginService.ValidarCredenciales(txtUsuario.Text, txtContraseña.Text);
                 //Si las credenciales son correctas, mostramos un mensaje de bienvenida
                 
-                MessageBox.Show($"Bienvenido {usuario.Nombre} ");
+                //MessageBox.Show($"Bienvenido {usuario.Nombre} ");
+
+                //foreach (var item in usuario.Patentes)
+                //{
+                //    MessageBox.Show(item.DataKey);
+                //}
+
                 //Cerramos el formulario de login
-                this.Close();
+                this.Hide();
+                new Principal(usuario).ShowDialog();
+                this.Show();
             }
             catch (Exception ex)
             {

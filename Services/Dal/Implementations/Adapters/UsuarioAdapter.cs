@@ -41,8 +41,6 @@ namespace Services.Dal.Implementations.Adapters
 
             usuario.Privilegios = new List<Component>();
 
-            usuario.IdUsuario = Guid.Parse("58A78003-3700-4388-BE91-FC8E6FED3E35");
-
             usuario.Privilegios.AddRange(new UsuarioFamiliaRepository().GetByObject(usuario));
 
             usuario.Privilegios.AddRange(new UsuarioPatenteRepository().GetByObject(usuario));
