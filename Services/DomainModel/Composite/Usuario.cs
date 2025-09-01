@@ -16,6 +16,8 @@ namespace Services.DomainModel
 
         private string password;
 
+
+
         /// <summary>
         /// Para gestionar el patrón composite debemos utilizar una lista de Component
         /// </summary>
@@ -81,6 +83,12 @@ namespace Services.DomainModel
         public Usuario(Guid idUsuario, string nombre, string email, string password, bool habilitado = true) : this(nombre, email, password, habilitado)
         {
             IdUsuario = idUsuario;
+        }
+
+        //Necesito constructor por defecto para el ORM
+        public Usuario()
+        {
+            
         }
     }
 }
