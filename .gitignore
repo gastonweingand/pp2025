@@ -113,3 +113,6 @@
 /UI/bin/Debug/OF
 /UI/bin/Of/Logs
 /UI/bin/Of
+/Dal/obj/Debug
+/DemoOrm/bin/Debug
+/DemoOrm/obj/Debug
