@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome to the logging system</value>
+  </data>
+  <data name="Goodbye" xml:space="preserve">
+    <value>Thanks for using the system</value>
+  </data>
+</root>

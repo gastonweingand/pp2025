@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Services.Dal.Implementations.Adapters
 {
+    /// <summary>
+    /// 
+    /// </summary>
     internal class UsuarioAdapter : IAdapter<Usuario>
     {
         #region Singleton
@@ -28,6 +31,11 @@ namespace Services.Dal.Implementations.Adapters
         }
 
         #endregion
+        /// <summary>
+        /// Obtener un objeto Usuario a partir de un array de objetos
+        /// </summary>
+        /// <param name="values"></param>
+        /// <returns></returns>
         public Usuario Get(object[] values)
         {
             Usuario usuario = new Usuario
