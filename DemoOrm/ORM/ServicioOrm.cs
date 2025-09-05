@@ -26,6 +26,9 @@ namespace DemoOrm.ORM
             var nombresColumnas = string.Join(", ", propiedades.Select(p => p.Name));
             var parametros = string.Join(", ", propiedades.Select(p => $"@{p.Name}"));
 
+            //Para caso de identity insert con int clasico utilizar instrucción similar a la siguiente,
+            //En caso de utilizar GUID, recordar que SQL no retorna OUTPUT INSERTED.IdXXXX de manera 
+            //nativa, por lo tanto mirar ejemplo en CustomerRepository.cs del proyecto Dal
             //var sql = $"INSERT INTO {tipo.Name} ({nombresColumnas}) OUTPUT INSERTED.Id{tipo.Name} VALUES ({parametros})";
             var sql = $"INSERT INTO {tipo.Name} ({nombresColumnas}) VALUES ({parametros})";
 
@@ -40,6 +43,7 @@ namespace DemoOrm.ORM
                         comando.Parameters.AddWithValue($"@{prop.Name}", prop.GetValue(obj) ?? DBNull.Value);
                     }
 
+                    //Recordar que los Insert utilizan ExecuteSacalar para obtener el ID generado por el motor de DB
                     //var nuevoId = comando.ExecuteScalar();
                     //tipo.GetProperty("Id")?.SetValue(obj, nuevoId);
                     comando.ExecuteNonQuery();
@@ -55,7 +59,6 @@ namespace DemoOrm.ORM
 
             using (var conexion = new SqlConnection(_connectionString))
             {
-
                 using (var comando = new SqlCommand(sql, conexion))
                 {
                     //Agregar el parámetro del ID

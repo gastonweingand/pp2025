@@ -12,8 +12,11 @@ namespace DemoOrm
     {
         static void Main(string[] args)
         {
-            Usuario usuario = new Usuario("Prueba", "p@gmail.com", "1234", true);
+            Usuario usuario = new Usuario("Usuario Demo", "pepe@gmail.com", "987654321", true);
             ServicioOrm.Add(usuario);
+
+            //Patente patente = new Patente();
+            //ServicioOrm.Add(patente);
 
             var user = ServicioOrm.GetById<Usuario>(Guid.Parse("57A84297-407C-4CA9-9FD7-3C10A2C85BBD"));
             Console.WriteLine($"ID: {user.IdUsuario}, Name: {user.Nombre}, Email: {user.Email}, IsActive: {user.Habilitado}");
