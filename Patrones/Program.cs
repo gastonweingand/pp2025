@@ -3,6 +3,8 @@ using Patrones.Composite;
 using Patrones.Decorator;
 using Patrones.Memento;
 using Patrones.Observer;
+using Patrones.Proto;
+using Patrones.Prototype;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -37,6 +39,47 @@ namespace Patrones
 
         static void Main(string[] args)
         {
+            //Proxy pattern
+            User admin = new User("admin", new[] { "read", "write", "delete" });
+            User guest = new User("guest", new[] { "read" });
+            IFile adminFile = new FileProxy("archivo.txt", admin);
+            IFile guestFile = new FileProxy("archivo.txt", guest);
+            Console.WriteLine("Admin intenta escribir:");
+            adminFile.Write("Contenido importante");
+            Console.WriteLine("Guest intenta escribir:");
+            guestFile.Write("Intento de escritura");
+            Console.WriteLine("Guest intenta leer:");
+            guestFile.Read();
+            Console.WriteLine("Guest intenta eliminar:");
+            guestFile.Delete();
+            Console.WriteLine("Admin elimina archivo:");
+            adminFile.Delete();
+
+
+            //Prototype pattern
+            List<IShape> figuras = new List<IShape>();
+
+            IShape circle1 = new Circle(10, "Rojo");
+            IShape circle2 = (IShape)circle1.Clone();
+            IShape rectangle1 = new Rectangle(20, 10, "Azul");
+            IShape rectangle2 = (IShape)rectangle1.Clone();
+            IShape triangle1 = new Triangle(15, 10, "Verde");
+            IShape triangle2 = (IShape)triangle1.Clone();
+            figuras.Add(circle1);
+            figuras.Add(circle2);
+            figuras.Add(rectangle1);
+            figuras.Add(rectangle2);
+            figuras.Add(triangle1);
+            figuras.Add(triangle2);
+
+            foreach (var figura in figuras)
+            {
+                figura.Draw();
+            }
+
+
+
+
             ProcesarConDebug();
             ProcesarConPerformance();
             ProcesarFull();
