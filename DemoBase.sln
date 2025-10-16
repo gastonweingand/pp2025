@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoOrm", "DemoOrm\DemoOrm.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoHilos", "DemoHilos\DemoHilos.csproj", "{4C0035F5-862F-456C-AE8C-3DF4C4976ADD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIHilos", "UIHilos\UIHilos.csproj", "{78D2BFAE-BD91-48DC-A227-1418CBA265B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{4C0035F5-862F-456C-AE8C-3DF4C4976ADD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C0035F5-862F-456C-AE8C-3DF4C4976ADD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C0035F5-862F-456C-AE8C-3DF4C4976ADD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78D2BFAE-BD91-48DC-A227-1418CBA265B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D2BFAE-BD91-48DC-A227-1418CBA265B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D2BFAE-BD91-48DC-A227-1418CBA265B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D2BFAE-BD91-48DC-A227-1418CBA265B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

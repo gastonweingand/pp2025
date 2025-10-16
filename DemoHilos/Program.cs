@@ -12,11 +12,41 @@ namespace DemoHilos
         static void Main(string[] args)
         {
             Console.WriteLine("Ejecutando proceso principal");
-            //for (int i = 0; i < 100; i++)
+
+            //Hilos parametrizables
+            HiloParametrizado hilo1 = new HiloParametrizado(20, "Hilo 1");
+            Thread hiloParametrizado1 = new Thread(hilo1.Ejecutar);
+            hiloParametrizado1.Start();
+
+            //1) Opción de atarme a una variable...
+            //while(hilo1.Retorno == 0)
             //{
-            //    Console.WriteLine($"Mostrando el nro.: {i}");
+            //    Thread.Sleep(100);
+            //    Console.WriteLine("Estoy esperando la finalización del hilo lanzado...");                
             //}
 
+            //2) Opción de atarme al estado del hilo...
+            //while(hiloParametrizado1.IsAlive)
+            //{
+            //    Thread.Sleep(100);
+            //    Console.WriteLine("Estoy esperando la finalización del hilo lanzado...");
+            //}
+
+            //3) Opción de atarme a la finalización del hilo...
+            hiloParametrizado1.Join(); //El proceso principal espera la finalización del hilo hijo
+            Console.WriteLine($"El hilo finalizó con retorno: {hilo1.Retorno}");
+
+
+
+            //HilosEnLaMismaClase();
+
+            Console.WriteLine("Finalizando proceso principal");
+            Console.WriteLine("Presione una tecla para finalizar...");
+            Console.ReadLine();
+        }
+
+        private static void HilosEnLaMismaClase()
+        {
             for (int i = 1; i < 11; i++)
             {
                 Thread hilo = new Thread(Hilo);
@@ -26,23 +56,16 @@ namespace DemoHilos
                 Console.WriteLine("Ingrese los ms. de espera del próximo hilo...");
                 int ms = int.Parse(Console.ReadLine());
 
-                Parametro parametro = new Parametro() { 
-                    ms = ms, 
-                    Name = hilo.Name 
+                Parametro parametro = new Parametro()
+                {
+                    ms = ms,
+                    Name = hilo.Name
                 };
 
 
-                hilo.Start(parametro);              
+                hilo.Start(parametro);
                 //hilo.Join();
             }
-            
-
-            //Si quiero que el proceso principal espere a que el hilo termine, utilizo Join
-            //hilo.Join();
-
-            Console.WriteLine("Finalizando proceso principal");
-            Console.WriteLine("Presione una tecla para finalizar...");
-            Console.ReadLine();
         }
 
         /// <summary>
