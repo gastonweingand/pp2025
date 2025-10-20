@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoHilos.CarreraCaballos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,16 @@ namespace DemoHilos
     {
         static void Main(string[] args)
         {
+
+            CarreraManager.LanzarHilos();
+
+            CarreraManager.MostrarResultados();
+
+
+
+
+
+
             Console.WriteLine("Ejecutando proceso principal");
 
             //Hilos parametrizables

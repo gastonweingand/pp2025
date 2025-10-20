@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarreraCaballos\Caballo.cs" />
+    <Compile Include="CarreraCaballos\Carrera.cs" />
     <Compile Include="HiloParametrizado.cs" />
     <Compile Include="Parametro.cs" />
     <Compile Include="Program.cs" />
