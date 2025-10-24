@@ -5,13 +5,37 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using DemoHilos.Productor_Consumidor;
 
 namespace DemoHilos
 {
     internal class Program
     {
+        //Recursos compartidos entre productor y consumidor
+        public static readonly Queue<int> cola = new Queue<int>();
+        //Elemento de bloqueo para la sincronización
+        public static readonly object lockObject = new object();
+
+
         static void Main(string[] args)
         {
+            //Productor-Consumidor
+
+            //Crear hilos para productor y consumidor
+            Thread hiloProductor = new Thread(new Productor().Producir);
+            Thread hiloConsumidor = new Thread(new Consumidor().Consumir);
+
+            //Iniciar los hilos
+            hiloProductor.Start();
+            Thread.Sleep(5000);
+            hiloConsumidor.Start();
+
+            hiloProductor.Join();
+
+
+
+
+
 
             CarreraManager.LanzarHilos();
 

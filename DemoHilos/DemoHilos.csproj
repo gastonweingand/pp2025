@@ -47,6 +47,8 @@
     <Compile Include="CarreraCaballos\Carrera.cs" />
     <Compile Include="HiloParametrizado.cs" />
     <Compile Include="Parametro.cs" />
+    <Compile Include="Productor-Consumidor\Consumidor.cs" />
+    <Compile Include="Productor-Consumidor\Productor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
