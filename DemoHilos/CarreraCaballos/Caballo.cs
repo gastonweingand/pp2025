@@ -32,12 +32,12 @@ namespace DemoHilos.CarreraCaballos
             Random random = new Random(Environment.TickCount + Numero); // Numero es el ID del caballo
 
             int tiempoTotal = 0;
-            for (int i = 0; i < 10; i++) // Simular que cada caballo corre 10 tramos
+            for (int i = 0; i < 10; i++) //Simular que cada caballo corre 10 tramos
             {
                 int tiempoTramo = random.Next(100, 1000); 
                 //Thread.Sleep(tiempoTramo); // Simular el tiempo que tarda en correr el tramo
                 tiempoTotal += tiempoTramo;
-            }
+            }            
 
             // Cuando un caballo termina, se agrega al diccionario
             lock (bloqueo)

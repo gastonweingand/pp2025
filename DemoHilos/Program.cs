@@ -1,11 +1,12 @@
 ﻿using DemoHilos.CarreraCaballos;
+using DemoHilos.Padre_Hijos;
+using DemoHilos.Productor_Consumidor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using DemoHilos.Productor_Consumidor;
 
 namespace DemoHilos
 {
@@ -19,6 +20,23 @@ namespace DemoHilos
 
         static void Main(string[] args)
         {
+            //Padre-Hijos
+            Padre padre = new Padre();
+            Hijo hijo1 = new Hijo(1);
+            Hijo hijo2 = new Hijo(2);
+            //Inicia el hilo del padre
+            Thread hiloPadre = new Thread(padre.Ejecutar);
+            hiloPadre.Start();
+            //Inicia los hilos de los hijos
+            Thread hiloHijo1 = new Thread(hijo1.Ejecutar);
+            Thread hiloHijo2 = new Thread(hijo2.Ejecutar);
+            hiloHijo1.Start();
+            hiloHijo2.Start();
+            Console.ReadLine();
+
+
+
+
             //Productor-Consumidor
 
             //Crear hilos para productor y consumidor

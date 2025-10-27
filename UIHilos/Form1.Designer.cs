@@ -63,6 +63,7 @@
             this.btnColor.TabIndex = 2;
             this.btnColor.Text = "Seleccionar Color";
             this.btnColor.UseVisualStyleBackColor = true;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // progressBar2
             // 

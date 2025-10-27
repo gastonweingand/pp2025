@@ -31,13 +31,12 @@ namespace DemoHilos.Productor_Consumidor
                     Program.cola.Enqueue(numero);
                     Console.WriteLine($"Productor: Generado {numero}");
 
-                    if(Program.cola.Count == 10)
+                    if(Program.cola.Count == 30)
                     {
                         Console.WriteLine($"---> Productor: Cola tiene {Program.cola.Count} elementos.");
-                    }
-
-                    //Notificar al consumidor que hay un nuevo elemento
-                    Monitor.Pulse(Program.lockObject);
+                        //Notificar al consumidor que hay un nuevo elemento
+                        Monitor.Pulse(Program.lockObject);
+                    }                    
 
                 } //Monitor.Exit(Program.lockObject)
 

@@ -46,6 +46,9 @@
     <Compile Include="CarreraCaballos\Caballo.cs" />
     <Compile Include="CarreraCaballos\Carrera.cs" />
     <Compile Include="HiloParametrizado.cs" />
+    <Compile Include="Padre-Hijos\Hijo.cs" />
+    <Compile Include="Padre-Hijos\Padre.cs" />
+    <Compile Include="Padre-Hijos\RecursoCompartido.cs" />
     <Compile Include="Parametro.cs" />
     <Compile Include="Productor-Consumidor\Consumidor.cs" />
     <Compile Include="Productor-Consumidor\Productor.cs" />

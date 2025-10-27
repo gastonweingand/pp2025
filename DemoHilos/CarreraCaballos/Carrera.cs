@@ -31,7 +31,12 @@ namespace DemoHilos.CarreraCaballos
             //Esperar a que todos los caballos terminen la carrera
             foreach (var hilo in hilos)
             {
-                hilo.Join();
+                bool salida = hilo.Join(10000);
+
+                if (salida)
+                    Console.WriteLine("salimos correctamente");
+                else
+                    Console.WriteLine("El hilo no respondió en el tiempo esperado.");
             }
         }
 

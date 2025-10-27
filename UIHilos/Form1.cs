@@ -29,23 +29,34 @@ namespace UIHilos
             hilo.Start();
         }
 
+        static readonly object lockObject = new object();
 
         private void Hilo()
         {
-            for (int i = 1; i < 100; i++)
+            lock (lockObject)
             {
-                progressBar.PerformStep();
-                Thread.Sleep(50);
-            }
+                for (int i = 1; i <= 100; i++)
+                {
+                    progressBar.PerformStep();
+                    Thread.Sleep(50);
+                }
 
-            progressBar.Step = -1;
+                progressBar.Step = -1;
 
-            for (int i = 100; i > 0; i--)
-            {
-                progressBar.PerformStep();
-                Thread.Sleep(50);
+                for (int i = 100; i > 0; i--)
+                {
+                    progressBar.PerformStep();
+                    Thread.Sleep(50);
+                }
+                progressBar.Step = 1;
             }
-            progressBar.Step = 1;
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            int nro = int.Parse(Interaction.InputBox("Por favor selecciona la barra que quiere pintar (1-2-3)"));
+
+
         }
     }
 }

@@ -15,7 +15,7 @@ namespace DemoHilos.Productor_Consumidor
             {
                 int numero;
 
-                lock (Program.lockObject)
+                lock (Program.lockObject) //Monitor.Enter(Program.lockObject);
                 {                    
                     while (Program.cola.Count == 0)
                     {
@@ -31,11 +31,11 @@ namespace DemoHilos.Productor_Consumidor
                     if (Program.cola.Count == 50)
                     {
                         Monitor.Pulse(Program.lockObject);
-                    }                    
-                }
+                    }
+                }//Monitor.Exit(Program.lockObject);
 
                 //Frenamos el hilos unos ms
-                Thread.Sleep(30);
+                Thread.Sleep(100);
             }
         }
 
